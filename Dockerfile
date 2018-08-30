@@ -1,8 +1,9 @@
-FROM java:8-alpine
+# Updated from java:8-alpine as deprecated - Hopefully equivalent ;-)
+FROM openjdk:8-jre-alpine
 
-#SOS Jobscheduler download URL
-ENV SOS_JS_URL https://download.sos-berlin.com/JobScheduler.1.12/jobscheduler_linux-x64.1.12.0.tar.gz
-ENV SOS_JOC_URL https://download.sos-berlin.com/JobScheduler.1.12/joc_linux.1.12.0.tar.gz
+#SOS Jobscheduler download URL - Updated from 1.12.0 to 1.12.3 - Now supports OpenJDK
+ENV SOS_JS_URL https://download.sos-berlin.com/JobScheduler.1.12/jobscheduler_linux-x64.1.12.3.tar.gz
+ENV SOS_JOC_URL https://download.sos-berlin.com/JobScheduler.1.12/joc_linux.1.12.3.tar.gz
 
 #add packages - needed for alpine
 RUN apk add --no-cache curl tar bash sed
